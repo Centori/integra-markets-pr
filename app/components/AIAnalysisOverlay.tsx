@@ -1059,22 +1059,22 @@ const AIAnalysisOverlay: React.FC<AIAnalysisOverlayProps> = ({ newsData: newsDat
                                 {!userVote ? (
                                     <View style={styles.pollOptions}>
                                         <TouchableOpacity
-                                            style={[styles.pollOptionSmall, styles.pollBullishSmall, { paddingVertical: 12, justifyContent: 'center' }]}
+                                            style={[styles.pollOptionSmall, styles.pollBullishSmall]}
                                             onPress={() => handleVote('BULLISH')}
                                         >
-                                            <Text style={[styles.pollOptionTextSmall, { color: '#4ECCA3', fontSize: 13, textAlign: 'center' }]}>Bullish</Text>
+                                            <Text style={[styles.pollOptionTextSmall, styles.pollBullishText]}>Bullish</Text>
                                         </TouchableOpacity>
                                         <TouchableOpacity
-                                            style={[styles.pollOptionSmall, styles.pollNeutralSmall, { paddingVertical: 12, justifyContent: 'center' }]}
+                                            style={[styles.pollOptionSmall, styles.pollNeutralSmall]}
                                             onPress={() => handleVote('NEUTRAL')}
                                         >
-                                            <Text style={[styles.pollOptionTextSmall, { color: '#EAB308', fontSize: 13, textAlign: 'center' }]}>Neutral</Text>
+                                            <Text style={[styles.pollOptionTextSmall, styles.pollNeutralText]}>Neutral</Text>
                                         </TouchableOpacity>
                                         <TouchableOpacity
-                                            style={[styles.pollOptionSmall, styles.pollBearishSmall, { paddingVertical: 12, justifyContent: 'center' }]}
+                                            style={[styles.pollOptionSmall, styles.pollBearishSmall]}
                                             onPress={() => handleVote('BEARISH')}
                                         >
-                                            <Text style={[styles.pollOptionTextSmall, { color: '#F05454', fontSize: 13, textAlign: 'center' }]}>Bearish</Text>
+                                            <Text style={[styles.pollOptionTextSmall, styles.pollBearishText]}>Bearish</Text>
                                         </TouchableOpacity>
                                     </View>
                                 ) : (
@@ -1454,7 +1454,9 @@ const styles = StyleSheet.create({
     pollOptions: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        gap: 10,
+        gap: 6,
+        marginTop: 16,
+        width: '100%',
     },
     pollOption: {
         flex: 1,
@@ -1525,33 +1527,53 @@ const styles = StyleSheet.create({
         color: '#ECECEC',
         fontWeight: '600',
     },
-    // Small rounded poll buttons (matching news card badges)
+    // Sentiment poll buttons — full-width row, sentiment-colored borders,
+    // subtle glow matching each sentiment. Bullish/Neutral/Bearish are
+    // siblings with identical geometry and only color differs.
     pollOptionSmall: {
         flex: 1,
-        flexDirection: 'row',
+        height: 56,
+        borderRadius: 16,
+        justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 8,
-        paddingVertical: 8,
-        paddingHorizontal: 12,
-        borderWidth: 1,
-        gap: 4,
-        backgroundColor: 'transparent',
+        borderWidth: 1.5,
     },
     pollOptionTextSmall: {
-        fontSize: 12,
+        fontSize: 18,
         fontWeight: '600',
     },
-    pollBearishSmall: {
-        borderColor: 'rgba(240, 84, 84, 0.5)',
-        backgroundColor: 'rgba(240, 84, 84, 0.1)',
+    pollBullishSmall: {
+        borderColor: '#20E6A3',
+        backgroundColor: 'rgba(32,230,163,0.05)',
+        shadowColor: '#20E6A3',
+        shadowOffset: { width: 0, height: 0 },
+        shadowOpacity: 0.25,
+        shadowRadius: 6,
     },
     pollNeutralSmall: {
-        borderColor: 'rgba(234, 179, 8, 0.5)',
-        backgroundColor: 'rgba(234, 179, 8, 0.1)',
+        borderColor: '#F4C430',
+        backgroundColor: 'rgba(244,196,48,0.05)',
+        shadowColor: '#F4C430',
+        shadowOffset: { width: 0, height: 0 },
+        shadowOpacity: 0.25,
+        shadowRadius: 6,
     },
-    pollBullishSmall: {
-        borderColor: 'rgba(78, 204, 163, 0.5)',
-        backgroundColor: 'rgba(78, 204, 163, 0.1)',
+    pollBearishSmall: {
+        borderColor: '#FF5A5F',
+        backgroundColor: 'rgba(255,90,95,0.05)',
+        shadowColor: '#FF5A5F',
+        shadowOffset: { width: 0, height: 0 },
+        shadowOpacity: 0.25,
+        shadowRadius: 6,
+    },
+    pollBullishText: {
+        color: '#20E6A3',
+    },
+    pollNeutralText: {
+        color: '#F4C430',
+    },
+    pollBearishText: {
+        color: '#FF5A5F',
     },
     // Total votes display
     totalVotesContainer: {
