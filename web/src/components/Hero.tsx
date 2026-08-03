@@ -81,8 +81,15 @@ export default function Hero() {
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-10 md:mb-14">
-                            {/* App Store Button */}
-                            <button className="flex items-center justify-center sm:justify-start bg-white text-black rounded-[8px] px-4 py-2.5 hover:bg-zinc-200 transition-colors">
+                            {/* App Store Button — pre-linked to the listing (Apple ID 6749469306);
+                                resolves automatically once the app is live on the App Store. */}
+                            <a
+                                href="https://apps.apple.com/app/id6749469306"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Download Integra Markets on the App Store"
+                                className="flex items-center justify-center sm:justify-start bg-white text-black rounded-[8px] px-4 py-2.5 hover:bg-zinc-200 transition-colors"
+                            >
                                 <svg className="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M17.864 12.871c-.015-2.79 2.29-4.133 2.396-4.195-1.306-1.9-3.34-2.16-4.067-2.193-1.711-.174-3.353 1.01-4.22 1.01-.884 0-2.232-1-3.666-1.028-1.896-.03-3.642 1.107-4.618 2.805-1.97 3.415-.504 8.468 1.402 11.233.937 1.36 2.05 2.89 3.513 2.835 1.405-.057 1.936-.91 3.633-.91 1.68 0 2.16.91 3.619.883 1.492-.03 2.45-1.36 3.37-2.71 1.066-1.542 1.505-3.034 1.528-3.11-.035-.015-2.92-1.12-2.888-4.62zm-3.12-6.52c.783-.946 1.306-2.259 1.163-3.568-1.12.045-2.476.75-3.28 1.69-.718.83-1.346 2.166-1.177 3.447 1.25.097 2.525-.623 3.294-1.57z" />
                                 </svg>
@@ -90,7 +97,7 @@ export default function Hero() {
                                     <div className="text-[9px] leading-none uppercase font-medium mt-[1px]">Download on the</div>
                                     <div className="text-[15px] font-semibold leading-none mt-[2px]">App Store</div>
                                 </div>
-                            </button>
+                            </a>
 
                             {/* Play Store Button */}
                             <button className="flex items-center justify-center sm:justify-start bg-transparent border border-white/20 text-white rounded-[8px] px-4 py-2.5 hover:bg-white/5 transition-colors">
