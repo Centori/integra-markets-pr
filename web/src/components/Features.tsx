@@ -4,7 +4,9 @@ import {
     TrendingUp,
     BarChart3,
     Zap,
-    Globe
+    Globe,
+    Scale,
+    GitCompareArrows
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -14,6 +16,18 @@ const features = [
         title: 'Sentiment Analysis',
         description: 'Specialized sentiment engines analyze headlines with confidence scores.',
         color: 'text-[#4ECCA3]'
+    },
+    {
+        icon: Scale,
+        title: 'Prediction Markets',
+        description: 'Live Polymarket and Kalshi odds on the events moving your commodities — the probability the crowd is actually pricing.',
+        color: 'text-[#30a5ff]'
+    },
+    {
+        icon: GitCompareArrows,
+        title: 'Cross-Market Divergence',
+        description: 'Our exclusive signal flags the moment news sentiment breaks from market-implied odds — or Polymarket and Kalshi disagree with each other.',
+        color: 'text-[#ffd93d]'
     },
     {
         icon: BarChart3,
@@ -30,7 +44,7 @@ const features = [
     {
         icon: Globe,
         title: 'Global Coverage',
-        description: 'Worldwide monitoring of oil, gas, agriculture, and metals markets.',
+        description: 'Oil, gas, metals and agriculture — plus LPG, lithium, uranium, freight and carbon markets.',
         color: 'text-[#4ECCA3]'
     }
 ];
@@ -57,7 +71,7 @@ export default function Features() {
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {features.map((feature, index) => (
                         <motion.div
                             key={index}

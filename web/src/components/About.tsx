@@ -48,6 +48,10 @@ export default function About() {
                         Built for speed, scale, and precision, Integra helps traders uncover inefficiencies and arbitrage opportunities in the energy markets physically, quantitatively, and algorithmically.
                     </p>
 
+                    <p>
+                        Integra is the only platform that reads the news <span className="text-white">and</span> the odds. AI sentiment on every headline sits beside live Polymarket and Kalshi pricing, and our cross-market divergence engine flags the moment the two disagree — often the earliest sign of a repricing.
+                    </p>
+
                     <p className="text-white font-normal text-[22px] mt-8">
                         It's time to get integrated.
                     </p>
